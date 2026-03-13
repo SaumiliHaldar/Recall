@@ -1,5 +1,8 @@
 // content.js - Injected into pages to extract information
 
+if (typeof window.hasRecallContentScript === 'undefined') {
+  window.hasRecallContentScript = true;
+
 /**
  * Extracts a decent summary from the page text.
  * Finds paragraphs, strips weird spacing, takes first ~300 chars.
@@ -59,3 +62,5 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   // Important: Keeps the message channel open for async response
   return true;
 });
+
+}

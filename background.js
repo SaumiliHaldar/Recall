@@ -130,7 +130,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
         
         saveEntry({
           ...response,
-          note: "Saved via right-click map.",
+          note: "Saved via right-click menu.",
           tags: ["quick-save"]
         });
       });
