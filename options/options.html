@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recall Settings</title>
+  <link rel="stylesheet" href="options.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="../icons/icon48.png" alt="Recall Logo">
+        <h1>Recall Settings</h1>
+      </div>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Data Management</h2>
+        <p class="desc">All your saved pages and notes are stored locally in your browser. Use these tools to backup or restore your memory.</p>
+        
+        <div class="action-row">
+          <div class="action-info">
+            <h3>Export Memory</h3>
+            <p>Download all your saved data as a JSON file.</p>
+          </div>
+          <button id="btn-export" class="btn primary">Export JSON</button>
+        </div>
+
+        <div class="action-row">
+          <div class="action-info">
+            <h3>Import Memory</h3>
+            <p>Restore your data from a previously exported JSON file.</p>
+          </div>
+          <div>
+            <input type="file" id="file-import" accept=".json" class="hidden">
+            <button id="btn-import" class="btn secondary">Import JSON</button>
+          </div>
+        </div>
+
+        <div class="action-row danger-zone">
+          <div class="action-info">
+            <h3>Clear All Data</h3>
+            <p>Permanently delete all your saved pages and notes. This cannot be undone.</p>
+          </div>
+          <button id="btn-clear" class="btn danger">Clear Data</button>
+        </div>
+        
+        <div id="status-msg" class="status-msg"></div>
+      </section>
+
+      <section class="card about">
+        <h2>About Recall</h2>
+        <p><strong>Recall – Your Internet Memory</strong></p>
+        <p>Version: <span id="version-text">1.0</span></p>
+        <p>A fast, local-first extension to save and search your web knowledge.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recall</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <header>
+    <div class="logo">
+      <img src="../icons/icon48.png" alt="Recall Logo" id="header-icon">
+      <h1>Recall</h1>
+    </div>
+    <div class="tabs">
+      <button id="tab-save" class="tab active">Save</button>
+      <button id="tab-library" class="tab">Library</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Save View -->
+    <section id="view-save" class="view active">
+      <div class="form-group">
+        <label>Title</label>
+        <div class="input-wrapper disabled-wrapper" title="Auto-filled from page">
+          <input type="text" id="page-title" readonly placeholder="Loading title...">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label>URL</label>
+        <div class="input-wrapper disabled-wrapper" title="Auto-filled from page">
+          <input type="text" id="page-url" readonly placeholder="Loading URL...">
+        </div>
+      </div>
+
+      <div class="form-group highlight-group hidden" id="highlight-container">
+        <label>Highlight</label>
+        <div class="highlight-box" id="page-highlight"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="page-note">Note</label>
+        <textarea id="page-note" placeholder="Write why you are saving this..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="page-tags">Tags (comma separated)</label>
+        <input type="text" id="page-tags" placeholder="e.g., ai, research, inspiration">
+      </div>
+
+      <button id="btn-save" class="primary-btn">
+        <span class="btn-text">Save to Recall</span>
+        <span class="success-icon hidden">✅</span>
+      </button>
+      <div id="save-status" class="status-msg"></div>
+    </section>
+
+    <!-- Library View -->
+    <section id="view-library" class="view">
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="Search title, URL, tags...">
+      </div>
+      
+      <div id="library-list" class="list-container">
+        <!-- Cards injected here by JS -->
+      </div>
+      
+      <div id="empty-state" class="empty-state hidden">
+        <div class="empty-icon">🧠</div>
+        <p>No memories yet.</p>
+        <span>Save a page to get started.</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>
